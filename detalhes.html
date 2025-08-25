@@ -1,0 +1,59 @@
+<script>
+  if (localStorage.getItem("logado") !== "true") {
+    window.location.href = "login.html"; // força login
+  }
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - OleSnicker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Ole<span>Snicker</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="comprar.html"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Detalhes do Produto -->
+    <section class="produto-detalhes">
+        <div class="container detalhes-grid">
+            <div class="detalhes-imagem">
+                <img id="produtoImg" src="" alt="Tênis">
+            </div>
+            <div class="detalhes-info">
+                <h2 id="produtoNome"></h2>
+                <p id="produtoDescricao"></p>
+                <h3 id="produtoPreco"></h3>
+                <button id="btnComprar" class="btn">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 OleSnicker. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/detalhes.js"></script>
+</body>
+</html>

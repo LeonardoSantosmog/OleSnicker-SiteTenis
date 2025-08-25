@@ -1,0 +1,189 @@
+<script>
+  if (localStorage.getItem("logado") !== "true") {
+    window.location.href = "login.html"; // força login
+  }
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós - OleSnicker</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* --- Estilo do Carrossel --- */
+    .carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      display: block;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .carousel-btn.prev {
+      left: 15px;
+    }
+
+    .carousel-btn.next {
+      right: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Seu<span>OleSnicker</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html" class="active">Sobre</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="#" class="cart-icon"><i class="fas fa-shopping-bag"></i></a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conteúdo -->
+  <section class="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre a OleSnicker</h2>
+      <p>
+        Na <strong>OleSnicker</strong>, acreditamos que tênis são muito mais do que simples calçados:
+        eles representam estilo, atitude e conforto para o seu dia a dia. 
+      </p>
+      <p>
+        Trabalhamos apenas com os modelos mais desejados das grandes marcas como Nike, Adidas, Puma e Jordan,
+        sempre garantindo qualidade, autenticidade e design marcante.
+      </p>
+      <p>
+        Nossa missão é oferecer os <strong>melhores tênis do mercado</strong>, unindo inovação,
+        performance e estilo para que cada passo seja cheio de confiança.
+      </p>
+    </div>
+  </section>
+
+<!-- Carrossel -->
+<section class="carousel">
+  <div class="carousel-track">
+    <div class="carousel-slide"><img src="images/image1.jpg" alt="Tênis 1"></div>
+    <div class="carousel-slide"><img src="images/image2.jpg" alt="Tênis 2"></div>
+    <div class="carousel-slide"><img src="images/image3.png" alt="Tênis 3"></div>
+  </div>
+  <button class="carousel-btn prev">&#10094;</button>
+  <button class="carousel-btn next">&#10095;</button>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>OleSnicker</h3>
+          <p>Melhores Tênis são aqui</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Links Úteis</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Informações</h3>
+          <ul>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Serviço</a></li>
+            <li><a href="#">Trocas e Devoluções</a></li>
+            <li><a href="#">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Desenvolvedores</h3>
+          <p>Leonardo Santos</p>
+          <p>Ryan Santos</p>
+          <p>Guilherme Olegario</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Seu e-mail">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 OleSnicker. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // --- JS do carrossel ---
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+    let index = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    // Auto play
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    }, 4000);
+  </script>
+</body>
+</html>

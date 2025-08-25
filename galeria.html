@@ -1,0 +1,144 @@
+<script>
+  if (localStorage.getItem("logado") !== "true") {
+    window.location.href = "login.html"; // força login
+  }
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - OleSnicker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Ole<span>Snicker</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="galeria.html" class="active">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="comprar.html"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Galeria de Produtos -->
+    <section class="galeria-produtos">
+        <div class="container">
+            <h2 class="section-title">Nossos Tênis</h2>
+            <div class="produtos-grid">
+
+                <!-- Produto 1 -->
+                <div class="produto-item">
+                    <div class="produto-img">
+                        <img src="images/image1.jpg" alt="Air Max 95">
+                        <div class="produto-overlay">
+                            <button class="btn" onclick="window.location.href='detalhes.html?id=1'">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <h3>Air Max 95</h3>
+                    <p>Tênis confortável e estiloso.</p>
+                    <span class="price">R$ 900,00</span>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="produto-item">
+                    <div class="produto-img">
+                        <img src="images/image2.jpg" alt="Adidas Forum Low">
+                        <div class="produto-overlay">
+                            <button class="btn" onclick="window.location.href='detalhes.html?id=2'">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <h3>Adidas Forum Low</h3>
+                    <p>Visual retrô e conforto para o dia a dia.</p>
+                    <span class="price">R$ 750,00</span>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="produto-item">
+                    <div class="produto-img">
+                        <img src="images/image3.png" alt="Puma Suede XL">
+                        <div class="produto-overlay">
+                            <button class="btn" onclick="window.location.href='detalhes.html?id=3'">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <h3>Puma Suede XL</h3>
+                    <p>Estilo retrô com cabedal em camurça premium.</p>
+                    <span class="price">R$ 610,00</span>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="produto-item">
+                    <div class="produto-img">
+                        <img src="images/image4.png" alt="Nome do Tênis">
+                        <div class="produto-overlay">
+                            <button class="btn" onclick="window.location.href='detalhes.html?id=4'">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <h3>Nike Crater Impact</h3>
+                    <p>Conforto e estilo sustentável para todos os dias.</p>
+                    <span class="price">R$ 550,00</span>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="produto-item">
+                    <div class="produto-img">
+                        <img src="images/image5.png" alt="Adidas Forum Low">
+                        <div class="produto-overlay">
+                            <button class="btn" onclick="window.location.href='detalhes.html?id=2'">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <h3>Adidas Forum Low</h3>
+                    <p>Visual retrô e conforto para o dia a dia.</p>
+                    <span class="price">R$ 750,00</span>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="produto-item">
+                    <div class="produto-img">
+                        <img src="images/image6.png" alt="Adidas Forum Low">
+                        <div class="produto-overlay">
+                            <button class="btn" onclick="window.location.href='detalhes.html?id=2'">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <h3>Adidas Forum Low</h3>
+                    <p>Visual retrô e conforto para o dia a dia.</p>
+                    <span class="price">R$ 750,00</span>
+                </div>
+
+                <!-- Produto 7 -->
+                <div class="produto-item">
+                    <div class="produto-img">
+                        <img src="images/image7.png" alt="Adidas Forum Low">
+                        <div class="produto-overlay">
+                            <button class="btn" onclick="window.location.href='detalhes.html?id=2'">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <h3>Adidas Forum Low</h3>
+                    <p>Visual retrô e conforto para o dia a dia.</p>
+                    <span class="price">R$ 750,00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 OleSnicker. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

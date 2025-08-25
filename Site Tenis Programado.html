@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - OleSnicker</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Ole<span>Snicker</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html" class="active"><i class="fas fa-user"></i> Login</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login / Registro -->
+  <section class="login-section">
+    <div class="container">
+      <div class="form-box" id="loginBox">
+        <h2>Entrar</h2>
+        <form id="loginForm">
+          <input type="email" placeholder="Seu e-mail" required>
+          <input type="password" placeholder="Sua senha" required>
+          <button type="submit" class="btn">Login</button>
+        </form>
+        <p>Não tem conta? <a href="#" onclick="mostrarRegistro()">Cadastre-se</a></p>
+      </div>
+
+      <div class="form-box hidden" id="registroBox">
+        <h2>Criar Conta</h2>
+        <form id="registroForm">
+          <input type="text" placeholder="Seu nome" required>
+          <input type="email" placeholder="Seu e-mail" required>
+          <input type="password" placeholder="Crie uma senha" required>
+          <button type="submit" class="btn">Registrar</button>
+        </form>
+        <p>Já tem conta? <a href="#" onclick="mostrarLogin()">Faça login</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 OleSnicker. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+<script>
+  const registroBox = document.getElementById('registroBox');
+  const loginBox = document.getElementById('loginBox');
+
+  function mostrarRegistro() {
+    loginBox.classList.add('hidden');
+    registroBox.classList.remove('hidden');
+  }
+
+  function mostrarLogin() {
+    registroBox.classList.add('hidden');
+    loginBox.classList.remove('hidden');
+  }
+
+  // Login
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("Login realizado com sucesso!");
+    localStorage.setItem("logado", "true"); // salva status
+    window.location.href = "galeria.html";
+  });
+
+  // Registro
+  document.getElementById('registroForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("Cadastro realizado com sucesso!");
+    localStorage.setItem("logado", "true"); // salva status
+    window.location.href = "galeria.html";
+  });
+</script>
+
+  <style>
+    .login-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 1rem;
+    }
+    .form-box {
+      max-width: 400px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .form-box input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.6rem 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .form-box .btn {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</body>
+</html>
